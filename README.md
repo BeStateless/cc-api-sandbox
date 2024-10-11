@@ -22,7 +22,7 @@
 
 cc-api-sandbox is a mock server for the Console Connect API.
 
-*Please, be aware that this repo is under heavy development, and should be expected to change rapidly.*
+_Please, be aware that this repo is under heavy development, and should be expected to change rapidly._
 
 ## Installation
 
@@ -41,6 +41,21 @@ Simply open your favorite CLI or browser and navigate to http://127.0.0.1:9000
 Pull requests are welcome and encouraged!
 
 For details, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Updating the OpenAPI Specification
+
+There is a modified version of the Console Connect OpenAPI specification included in the repository.
+To update the spec, simply remove the old specification from the `specs/` folder and push a new
+version with the filename `ccapi_YYYYMMDD.json`, where YYYY is the 4 digit year, MM is the two
+digit month, and DD is the two digit day. Then update the filename in `src/app.ts` to match.
+
+To try out a new specification file locally, you can pass in the path to the file through the
+environment variable `SPEC_FILE`. For example:
+
+```bash
+export SPEC_FILE="./specs/mytestapi.json"
+yarn dev
+```
 
 ## License
 
